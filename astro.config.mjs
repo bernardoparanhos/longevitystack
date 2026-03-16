@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://longevitystack.pages.dev',
+  site: 'https://longevitystack.org',
   integrations: [mdx(), sitemap()],
 
   vite: {
