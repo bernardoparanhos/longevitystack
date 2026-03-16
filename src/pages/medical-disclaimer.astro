@@ -1,0 +1,140 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Medical Disclaimer — LongevityStack"
+      description="LongevityStack is an informational site based on peer-reviewed research. It does not constitute medical advice."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <div class="page-header">
+        <div class="tag">Legal</div>
+        <h1>Medical Disclaimer</h1>
+        <div class="meta">Last updated: March 2026</div>
+      </div>
+
+      <div class="prose">
+
+        <h2>Not medical advice</h2>
+        <p>
+          The content published on LongevityStack — including all articles, protocols, supplement recommendations, and research summaries — is provided for informational and educational purposes only. It does not constitute medical advice, diagnosis, or treatment.
+        </p>
+        <p>
+          Always seek the guidance of a qualified physician or other licensed healthcare professional before making changes to your diet, supplementation, exercise routine, or any other aspect of your health protocol.
+        </p>
+
+        <h2>Not a substitute for professional care</h2>
+        <p>
+          Reading content on this site does not create a doctor-patient relationship between you and the author. LongevityStack is not a medical practice and the author is not a licensed healthcare provider.
+        </p>
+        <p>
+          Never disregard professional medical advice or delay seeking it because of something you have read on this website.
+        </p>
+
+        <h2>Research accuracy and limitations</h2>
+        <p>
+          LongevityStack makes every effort to cite peer-reviewed, published clinical research. However, scientific understanding evolves constantly. Information that is accurate today may be revised or contradicted by future research.
+        </p>
+        <p>
+          All cited studies are linked directly to their source (PubMed, NIH, or the original journal). Readers are encouraged to consult primary sources and discuss findings with a qualified professional.
+        </p>
+
+        <h2>Affiliate disclosure</h2>
+        <p>
+          Some links on this site are affiliate links. If you purchase a product through an affiliate link, LongevityStack may earn a commission at no additional cost to you. Affiliate relationships do not influence editorial decisions — products are only recommended when the clinical evidence supports their use.
+        </p>
+        <p>
+          All affiliate links are clearly labeled with an "Affiliate" badge in the article where they appear.
+        </p>
+
+        <h2>Individual variation</h2>
+        <p>
+          Supplement effects, optimal dosages, and health outcomes vary significantly between individuals based on genetics, existing health conditions, medications, and other factors. What works well for one person may be ineffective or harmful for another.
+        </p>
+        <p>
+          Always consider your individual health context before applying any protocol described on this site.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          If you find an error in any article or have concerns about the accuracy of published information, please contact us at <a href="mailto:beparanhosborges@gmail.com">beparanhosborges@gmail.com</a>. We are committed to correcting factual errors promptly.
+        </p>
+
+      </div>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  .page-header {
+    padding: 48px 0 32px;
+    border-bottom: 0.5px solid var(--color-border);
+    margin-bottom: 40px;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: var(--color-hint);
+  }
+
+  .prose h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-top: 40px;
+    margin-bottom: 14px;
+    color: var(--color-text);
+  }
+
+  .prose p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 18px;
+  }
+
+  .prose a {
+    color: var(--color-green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
