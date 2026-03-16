@@ -2,48 +2,125 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title="LongevityStack — Evidence-based biohacking" description="Applying systems engineering to human performance. Sleep, supplements, and cognitive longevity — backed by peer-reviewed research." />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="tag">Evidence-based · No fluff</div>
+        <h1>Optimize your biology.<br/>Live longer. Think clearer.</h1>
+        <p>Applying systems engineering to human performance. Every article is backed by peer-reviewed research — not wellness trends.</p>
+        <a href="/blog/start-here" class="cta">Start Here →</a>
+      </section>
+
+      <!-- AUTHOR STRIP -->
+      <div class="author-strip">
+        <div class="avatar">BP</div>
+        <div>
+          <div class="author-name">Bernardo Paranhos</div>
+          <div class="author-bio">Production Engineering student · UTFPR · <strong>Systems & Longevity Researcher</strong> — I apply industrial systems thinking to optimize human biology.</div>
+        </div>
+        <a href="/about" class="about-link">Full bio →</a>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter">
+        <div class="nl-left">
+          <div class="nl-eyebrow">Free weekly digest</div>
+          <div class="nl-title">Join 5,000+ high-performers. Get the weekly deep dive.</div>
+          <div class="nl-sub">One email. Three studies. Zero supplement ads.</div>
+        </div>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com" />
+          <button>Subscribe →</button>
+        </div>
+      </div>
+
+      <!-- PILLARS -->
+      <div class="section-label">The three pillars</div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon" style="background:#EAF3DE">🌙</div>
+          <h4>Sleep optimization</h4>
+          <p>Temperature, light, timing and tracking protocols</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" style="background:#FAEEDA">🧬</div>
+          <h4>Supplementation</h4>
+          <p>What the trials actually show — and what to skip</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" style="background:#E6F1FB">⚡</div>
+          <h4>Cognitive performance</h4>
+          <p>Focus, memory and long-term brain health</p>
+        </div>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="featured">
+        <div class="feat-content">
+          <div class="feat-label">Featured analysis</div>
+          <h2>Magnesium Glycinate vs. Threonate: which one crosses the blood-brain barrier?</h2>
+          <p>A systems-level breakdown of bioavailability, absorption kinetics, and evidence across 8 randomized trials.</p>
+          <a href="/blog/magnesium-glycinate-vs-threonate" class="cta" style="font-size:13px;padding:10px 22px;">Read the analysis →</a>
+        </div>
+        <div class="feat-stats">
+          <div class="stat"><div class="stat-n">8</div><div class="stat-l">RCT sources</div></div>
+          <div class="stat"><div class="stat-n">12'</div><div class="stat-l">Read time</div></div>
+          <div class="stat"><div class="stat-n">2026</div><div class="stat-l">Updated</div></div>
+        </div>
+      </div>
+
+    </main>
+    <Footer />
+  </body>
 </html>
+
+<style>
+  main { max-width: 900px; margin: 0 auto; padding: 0 28px 80px; }
+
+  .hero { padding: 64px 0 48px; text-align: center; max-width: 720px; margin: 0 auto; }
+  .tag { display: inline-block; background: var(--color-green-light); color: var(--color-green); font-size: 10px; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 22px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero h1 { font-size: 38px; margin-bottom: 18px; }
+  .hero p { font-size: 16px; color: var(--color-muted); line-height: 1.75; margin-bottom: 32px; }
+  .cta { display: inline-flex; align-items: center; background: var(--color-green); color: #EAF3DE; font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+  .cta:hover { text-decoration: none; opacity: 0.9; }
+
+  .author-strip { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border-radius: 12px; padding: 18px 22px; margin-bottom: 32px; flex-wrap: wrap; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: #C0DD97; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--color-green); flex-shrink: 0; }
+  .author-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+  .author-bio { font-size: 12px; color: var(--color-muted); line-height: 1.6; }
+  .author-bio strong { color: var(--color-green); }
+  .about-link { font-size: 11px; color: var(--color-green); font-weight: 600; padding: 7px 14px; border: 0.5px solid #C0DD97; border-radius: 8px; margin-left: auto; white-space: nowrap; text-decoration: none; }
+
+  .newsletter { background: #1a1a18; border-radius: 12px; padding: 24px 28px; margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .nl-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--color-green-mid); font-weight: 600; margin-bottom: 6px; }
+  .nl-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FAFAF7; line-height: 1.3; }
+  .nl-sub { font-size: 11px; color: #888780; margin-top: 5px; }
+  .nl-form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .nl-form input { background: #2a2a28; border: 0.5px solid #444441; border-radius: 8px; padding: 9px 14px; font-size: 13px; color: #FAFAF7; font-family: 'Inter', sans-serif; width: 200px; outline: none; }
+  .nl-form button { background: var(--color-green-mid); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer; }
+
+  .section-label { text-align: center; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: #B4B2A9; margin-bottom: 20px; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
+  .pillar { background: #fff; border: 0.5px solid var(--color-border); border-radius: 12px; padding: 22px 18px; text-align: center; }
+  .pillar-icon { width: 38px; height: 38px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+  .pillar h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .pillar p { font-size: 11px; color: var(--color-hint); line-height: 1.6; }
+
+  .featured { background: var(--color-surface); border-radius: 16px; padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
+  .feat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-hint); margin-bottom: 12px; }
+  .featured h2 { font-size: 22px; margin-bottom: 12px; }
+  .featured p { font-size: 13px; color: var(--color-muted); line-height: 1.75; margin-bottom: 22px; }
+  .feat-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-n { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--color-green); line-height: 1; }
+  .stat-l { font-size: 9px; color: var(--color-hint); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+</style>
