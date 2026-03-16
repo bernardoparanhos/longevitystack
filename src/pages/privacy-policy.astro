@@ -1,0 +1,162 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Privacy Policy — LongevityStack"
+      description="Privacy Policy for LongevityStack. How we collect, use, and protect your information."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <div class="page-header">
+        <div class="tag">Legal</div>
+        <h1>Privacy Policy</h1>
+        <div class="meta">Last updated: March 2026</div>
+      </div>
+
+      <div class="prose">
+
+        <h2>Overview</h2>
+        <p>
+          LongevityStack ("we", "us", or "our") operates the website longevitystack.pages.dev. This page informs you of our policies regarding the collection, use, and disclosure of personal information when you use our site.
+        </p>
+
+        <h2>Information we collect</h2>
+        <p>
+          We collect minimal information to operate this site effectively:
+        </p>
+        <ul>
+          <li><strong>Email address</strong> — only if you voluntarily subscribe to our newsletter.</li>
+          <li><strong>Usage data</strong> — pages visited, time on site, browser type, via Google Analytics 4. This data is anonymized and aggregated.</li>
+          <li><strong>Cookies</strong> — Google Analytics and Google AdSense use cookies to serve relevant ads and analyze traffic. You can opt out via your browser settings.</li>
+        </ul>
+
+        <h2>How we use your information</h2>
+        <ul>
+          <li>To send the weekly newsletter (email subscribers only)</li>
+          <li>To analyze site traffic and improve content quality</li>
+          <li>To serve relevant advertisements via Google AdSense</li>
+        </ul>
+
+        <h2>Google AdSense and third-party advertising</h2>
+        <p>
+          We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior visits to this site and other sites on the internet. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.
+        </p>
+
+        <h2>Affiliate links</h2>
+        <p>
+          Some links on this site are affiliate links. When you click an affiliate link and make a purchase, we may receive a commission at no additional cost to you. We only recommend products we have personally reviewed or that have strong clinical evidence supporting their use. All affiliate links are clearly labeled.
+        </p>
+
+        <h2>Newsletter</h2>
+        <p>
+          If you subscribe to our newsletter, your email address is stored securely via Brevo (Sendinblue). We will never sell or share your email address with third parties. You can unsubscribe at any time via the link in any newsletter email.
+        </p>
+
+        <h2>Your rights (CCPA / GDPR)</h2>
+        <p>
+          You have the right to access, correct, or delete any personal information we hold about you. To exercise these rights, contact us at <a href="mailto:beparanhosborges@gmail.com">beparanhosborges@gmail.com</a>.
+        </p>
+        <p>
+          California residents: under the CCPA, you have the right to know what personal data is collected, to delete personal data, and to opt out of the sale of personal data. We do not sell personal data.
+        </p>
+
+        <h2>Data retention</h2>
+        <p>
+          Newsletter subscriber emails are retained until you unsubscribe. Analytics data is retained for 14 months per Google Analytics default settings.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the updated policy.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For privacy-related questions or requests: <a href="mailto:beparanhosborges@gmail.com">beparanhosborges@gmail.com</a>
+        </p>
+
+      </div>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+  .page-header {
+    padding: 48px 0 32px;
+    border-bottom: 0.5px solid var(--color-border);
+    margin-bottom: 40px;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--color-hint);
+  }
+  .prose h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-top: 40px;
+    margin-bottom: 14px;
+    color: var(--color-text);
+  }
+  .prose p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 18px;
+  }
+  .prose ul {
+    padding-left: 22px;
+    margin-bottom: 20px;
+  }
+  .prose li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .prose a {
+    color: var(--color-green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
