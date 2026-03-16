@@ -1,9 +1,12 @@
 ---
 title: "Magnesium Glycinate vs. Threonate: Which Form Actually Reaches Your Brain?"
-description: "A systems-level comparison of magnesium glycinate and magnesium threonate — bioavailability, blood-brain barrier penetration, and which form the clinical evidence actually supports."
-pubDate: "2026-03-16"
+description: "A systems-level breakdown of bioavailability, blood-brain barrier penetration, and which form the clinical evidence actually supports."
+pubDate: 2026-03-16
+author: "Bernardo Paranhos"
+rctSources: 8
+readTime: "12 min"
+category: "Supplements"
 heroImage: "../../assets/blog-placeholder-3.jpg"
-
 ---
 
 Most magnesium supplements on the market make similar claims. But when you apply the same systems-level rigor you'd use to analyze any biological process, the differences between forms become significant — especially if your goal is cognitive performance and longevity, not just correcting a deficiency.
@@ -73,9 +76,13 @@ Threonate is on my watchlist. Given the current evidence profile — promising b
 
 This is the kind of judgment call that requires weighing evidence strength, cost, and individual context — exactly the kind of optimization problem that systems engineering is built for.
 
+<div style="height: 50px;"></div>
+
 ---
 
-## References
+<div style="margin-top: 40px; margin-bottom: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: #888780;">References</div>
+
+<div style="display: flex; flex-direction: column; gap: 15px; font-size: 14px; line-height: 1.6;">
 
 [1] de Baaij JH, Hoenderop JG, Bindels RJ. Magnesium in man: implications for health and disease. *Physiol Rev.* 2015;95(1):1-46. [PubMed](https://pubmed.ncbi.nlm.nih.gov/25540137/)
 
