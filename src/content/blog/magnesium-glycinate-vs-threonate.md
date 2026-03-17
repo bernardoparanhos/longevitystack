@@ -1,5 +1,5 @@
 ---
-title: "Magnesium Glycinate vs. Threonate: Which Form Actually Reaches Your Brain?"
+title: "Magnesium Glycinate vs Threonate: Which Is Better for Sleep and Brain Function?"
 description: "A systems-level breakdown of bioavailability, blood-brain barrier penetration, and which form the clinical evidence actually supports."
 pubDate: 2026-03-16T00:00:00Z
 author: "Bernardo Paranhos"
@@ -58,15 +58,32 @@ If you are magnesium deficient and not sleeping well, **glycinate first**. Fix t
 
 If your baseline magnesium status is adequate and your goal is specifically to support synaptic density and cognitive resilience over the long term, threonate addresses the biological bottleneck that glycinate cannot — BBB penetration.
 
-## Recommended protocol — based on current evidence
+## Evidence-based approach (general guidance)
 
 **Step 1 — Test first (optional but ideal):** A serum magnesium test or RBC magnesium test establishes your baseline. Below 0.85 mmol/L serum = prioritize repletion before cognitive supplementation.
 
-**Step 2 — If deficient:** Magnesium glycinate 300–400mg elemental, taken in the evening with food. 8–12 weeks to normalize levels. NSF-certified brands (Thorne, Pure Encapsulations) recommended.
+**Step 2 — If deficient:** Magnesium glycinate — common supplemental range: ~200–400mg elemental (individual needs vary), taken in the evening with food. 8–12 weeks to normalize levels. NSF-certified brands (Thorne, Pure Encapsulations) recommended.
 
 **Step 3 — If replete and targeting cognition:** Magnesium threonate (Magtein® form) 1.5–2g daily, split into morning and evening doses. Allow 4–6 weeks for meaningful cognitive effects.
 
 **Step 4 — Stack option:** Some practitioners use both — glycinate in the evening for sleep and deficiency insurance, threonate in the morning for cognitive performance. Total elemental magnesium should not exceed 350mg/day from supplements (NIH upper tolerable limit) [8].
+
+## Best options — based on evidence
+
+**For sleep and deficiency correction (best starting point):**
+Magnesium glycinate — high absorption, minimal GI side effects, glycine co-factor for sleep.
+
+<a href="https://www.thorne.com/products/dp/magnesium-bisglycinate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+
+**For cognitive longevity and brain support:**
+Magnesium L-Threonate (Magtein® form) — the only form with documented BBB penetration.
+
+<a href="https://www.lifeextension.com/vitamins-supplements/item01603/neuro-mag-magnesium-l-threonate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Life Extension Neuro-Mag (Magtein®) →</a>
+
+<div style="background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;font-size:13px;color:#5F5E5A;">
+<strong style="color:#854F0B;display:block;margin-bottom:6px;">Affiliate disclosure</strong>
+Links above are affiliate links. LongevityStack earns a commission at no extra cost to you. Products are recommended based on evidence and NSF certification — not commission rates.
+</div>
 
 ## What I would actually take — and why
 
