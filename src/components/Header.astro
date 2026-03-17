@@ -4,8 +4,13 @@
 <header>
   <nav>
     <a href="/" class="logo">Longevity<span>Stack</span></a>
-    <div class="nav-links">
-      <a href="/start-here">Start Here</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/start-here" class="nav-start">Start Here</a>
       <a href="/blog/sleep">Sleep</a>
       <a href="/blog/supplements">Supplements</a>
       <a href="/blog/cognition">Cognition</a>
@@ -25,10 +30,11 @@
   nav {
     max-width: 900px;
     margin: 0 auto;
-    padding: 18px 28px;
+    padding: 16px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
   .logo {
     font-family: 'Poppins', sans-serif;
@@ -37,13 +43,14 @@
     letter-spacing: -0.5px;
     color: var(--color-text);
     text-decoration: none;
+    z-index: 101;
   }
-  .logo span {
-    color: var(--color-green-mid);
-  }
+  .logo span { color: var(--color-green-mid); }
+
   .nav-links {
     display: flex;
     gap: 6px;
+    align-items: center;
   }
   .nav-links a {
     font-size: 13px;
@@ -53,12 +60,76 @@
     text-decoration: none;
     transition: color 0.15s;
   }
-  .nav-links a:first-child {
-    color: var(--color-green);
-    font-weight: 600;
+  .nav-links a:hover { color: var(--color-green); }
+  .nav-start {
+    color: var(--color-green) !important;
+    font-weight: 600 !important;
     background: var(--color-green-light);
   }
-  .nav-links a:hover {
-    color: var(--color-green);
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 640px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-bg);
+      border-bottom: 0.5px solid var(--color-border);
+      padding: 16px 28px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      font-size: 15px;
+      padding: 10px 14px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .nav-start { background: var(--color-green-light); }
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks?.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger?.contains(e.target) && !navLinks?.contains(e.target)) {
+      hamburger?.classList.remove('open');
+      navLinks?.classList.remove('open');
+    }
+  });
+</script>
