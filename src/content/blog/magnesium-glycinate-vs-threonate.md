@@ -1,7 +1,7 @@
 ---
 title: "Magnesium Glycinate vs. Threonate: Which Form Actually Reaches Your Brain?"
 description: "A systems-level breakdown of bioavailability, blood-brain barrier penetration, and which form the clinical evidence actually supports."
-pubDate: 2026-03-16
+pubDate: 2026-03-16T00:00:00Z
 author: "Bernardo Paranhos"
 rctSources: 8
 readTime: "12 min"

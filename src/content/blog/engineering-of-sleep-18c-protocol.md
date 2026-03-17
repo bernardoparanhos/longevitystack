@@ -1,7 +1,7 @@
 ---
 title: "The Engineering of Sleep: Why 18°C (64°F) is the Scientific Gold Standard"
 description: "Your body is a thermal system. Deep sleep requires a core temperature drop of ~1°C — and your bedroom environment is either accelerating or blocking that process. A systems-level breakdown."
-pubDate: 2026-03-16
+pubDate: 2026-03-16T00:00:00Z
 author: "Bernardo Paranhos"
 rctSources: 6
 readTime: "14 min"
