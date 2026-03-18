@@ -57,3 +57,40 @@ header {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700 !important;
 }
+
+/* Tabela dos artigos */
+.prose table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 48px 0 56px !important;
+  font-size: 15px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.prose th {
+  background: var(--color-green-light) !important;
+  color: var(--color-green) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 14px 20px !important;
+  text-align: left !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.prose td {
+  padding: 14px 20px !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  vertical-align: middle !important;
+  line-height: 1.6 !important;
+}
+
+.prose tr:last-child td {
+  border-bottom: none !important;
+}
+
+.prose tr:nth-child(even) td {
+  background: var(--color-surface) !important;
+}

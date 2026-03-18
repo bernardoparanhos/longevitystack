@@ -49,9 +49,9 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
 
 <style>
   main {
-    max-width: 720px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 0 28px 80px;
+    padding: 0 40px 80px;
   }
 
   .article-header {
@@ -123,44 +123,48 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
   }
 
   /* PROSE STYLES */
-  .prose {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--color-text);
-  }
+.prose {
+  font-size: 17.5px;
+  line-height: 2;
+  color: var(--color-text);
+  max-width: 720px;
+  margin: 0 auto;
+}
 
-  .prose p {
-    margin-bottom: 24px;
-  }
+.prose p {
+  margin-bottom: 32px !important;
+  margin-top: 0 !important;
+}
 
-  .prose h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.4px;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    color: var(--color-text);
-  }
+.prose h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-top: 72px !important;
+  margin-bottom: 24px !important;
+  color: var(--color-text);
+}
 
-  .prose h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 32px;
-    margin-bottom: 12px;
-    color: var(--color-text);
-  }
+.prose h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 52px !important;
+  margin-bottom: 18px !important;
+  color: var(--color-text);
+}
 
-  .prose ul, .prose ol {
-    padding-left: 24px;
-    margin-bottom: 24px;
-  }
+.prose ul, .prose ol {
+  padding-left: 24px;
+  margin-top: 8px !important;
+  margin-bottom: 36px !important;
+}
 
-  .prose li {
-    margin-bottom: 8px;
-    line-height: 1.7;
-  }
+.prose li {
+  margin-bottom: 12px !important;
+  line-height: 1.8;
+}
 
   .prose strong {
     font-weight: 600;
@@ -175,8 +179,8 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
 
   .prose blockquote {
     border-left: 3px solid var(--color-green-mid);
-    padding: 12px 20px;
-    margin: 28px 0;
+    padding: 14px 20px;
+    margin: 36px 0;
     background: var(--color-green-light);
     border-radius: 0 8px 8px 0;
     font-size: 15px;
@@ -186,27 +190,53 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
   .prose hr {
     border: none;
     border-top: 0.5px solid var(--color-border);
-    margin: 56px 0 40px;
-
+    margin: 56px 0 48px;
   }
 
-  .prose h2:has(+ p a[href*="pubmed"]),
-  .prose h2:has(+ p a[href*="nih"]) {
-    margin-top: 56px;
+  /* Botões afiliados — espaço antes e depois */
+  .prose a[style*="background:#3B6D11"],
+  .prose a[style*="background: #3B6D11"] {
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 40px;
   }
 
- /* References section */
-.prose h2:last-of-type {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--color-hint);
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding-top: 0;
-  border-top: none;
-}
+  /* Tabelas */
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 40px;
+    font-size: 13px;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose th {
+    background: var(--color-surface);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--color-muted);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose td {
+    padding: 10px 14px;
+    border-bottom: 0.5px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .prose tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* References section — só afeta o div inline, não h2 */
+  .prose h2:last-of-type {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 
   .prose p:has(a[href*="pubmed"]),
   .prose p:has(a[href*="nih"]) {
@@ -222,5 +252,127 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
     border-radius: 4px;
     font-size: 14px;
   }
-  
+
+  /* Espaço entre divs inline e texto */
+  .prose div[style] {
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+
+  /* Espaço após parágrafos com links internos */
+  .prose p + p {
+    margin-top: 4px;
+  }
+
+  /* Primeiro parágrafo após h2 sem margin extra */
+  .prose h2 + p {
+    margin-top: 0;
+  }
+
+  /* Espaço entre hr e o que vem depois */
+  .prose hr + * {
+    margin-top: 48px;
+  }
+
+  /* FAQ perguntas em bold */
+  .prose p > strong:first-child {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+/* ===== NOVAS REGRAS PARA MELHORAR ESPAÇAMENTO ===== */
+
+/* Espaçamento antes do FAQ e seções importantes */
+.prose h2:has(+ p > strong:first-child) {
+  margin-bottom: 24px;
+}
+
+/* Melhorar espaçamento da tabela */
+.prose table {
+  margin: 32px 0 48px !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--color-surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.prose th {
+  background: var(--color-green-light);
+  color: var(--color-green);
+  font-weight: 600;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prose td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: white;
+}
+
+.prose tr:last-child td {
+  border-bottom: none;
+}
+
+/* Melhorar FAQ (perguntas em bold) */
+.prose p > strong:first-child {
+  display: block;
+  margin-top: 48px !important;
+  margin-bottom: 16px !important;
+  font-size: 18px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+}
+
+/* Espaçamento para as respostas do FAQ */
+.prose p:has(> strong:first-child) + p {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  padding-left: 4px;
+}
+
+/* Melhorar divs com borda verde (Key insights) */
+.prose div[style*="background: #EAF3DE"] {
+  margin: 48px 0 !important;
+  padding: 24px 28px !important;
+  border-left-width: 4px !important;
+}
+
+/* Melhorar seção de referências */
+.prose div[style*="display: flex; flex-direction: column; gap: 15px;"] {
+  margin-top: 32px !important;
+  margin-bottom: 60px !important;
+  background: var(--color-surface);
+  padding: 24px 28px;
+  border-radius: 16px;
+}
+
+.prose div[style*="display: flex; flex-direction: column; gap: 15px;"] a {
+  color: var(--color-green);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.prose div[style*="display: flex; flex-direction: column; gap: 15px;"] a:hover {
+  text-decoration: underline;
+}
+
+/* Espaçamento entre os itens das referências */
+.prose div[style*="display: flex; flex-direction: column; gap: 15px;"] > div {
+  margin-bottom: 0 !important;
+}
+
+/* Título "References" */
+.prose div[style*="margin-top: 40px; margin-bottom: 20px;"] {
+  margin-top: 60px !important;
+  margin-bottom: 24px !important;
+  letter-spacing: 1.5px;
+}
+
 </style>
