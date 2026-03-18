@@ -6,7 +6,8 @@ author: "Bernardo Paranhos"
 rctSources: 6
 readTime: "14 min"
 category: "Sleep"
-heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImage: "../../assets/frost-sleep-hero.jpg"
+excerpt: "Your body can't enter deep sleep without dropping its core temperature. Most people are sleeping 5–8°F warmer than optimal — and paying for it every morning."
 ---
 
 > **Medical disclaimer:** I am not a doctor. This article is for informational and educational purposes only, based on peer-reviewed clinical research. It does not constitute medical advice. Always consult a qualified healthcare professional before making any changes to your sleep protocol.

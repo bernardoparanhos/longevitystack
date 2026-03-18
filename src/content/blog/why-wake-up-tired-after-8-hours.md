@@ -7,7 +7,8 @@ author: "Bernardo Paranhos"
 rctSources: 6
 readTime: "11 min"
 category: "Sleep"
-heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImage: "../../assets/sleep-cycles-hero.jpg"
+excerpt: "You slept 8 hours. You should feel rested. You don't. The problem isn't how long you slept — it's what happened while you were sleeping."
 ---
 
 *Last updated: March 2026 · Based on 6 peer-reviewed studies*

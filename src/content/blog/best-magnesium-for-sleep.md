@@ -7,7 +7,8 @@ author: "Bernardo Paranhos"
 rctSources: 7
 readTime: "11 min"
 category: "Supplements"
-heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImage: "../../assets/magnesium-sleep-hero.jpg"
+excerpt: "Not all magnesium supplements improve sleep equally. A systems-level breakdown of the 4 forms that actually work — and the one most people are wasting money on."
 ---
 
 > **Medical disclaimer:** I am not a doctor. This article is for informational and educational purposes only, based on peer-reviewed clinical research. It does not constitute medical advice. Always consult a qualified healthcare professional before making any changes to your supplement protocol.

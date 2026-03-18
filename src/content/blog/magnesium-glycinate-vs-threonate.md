@@ -6,7 +6,7 @@ author: "Bernardo Paranhos"
 rctSources: 8
 readTime: "12 min"
 category: "Supplements"
-heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImage: "../../assets/magnesium-hero.jpg"
 ---
 
 Most magnesium supplements on the market make similar claims. But when you apply the same systems-level rigor you'd use to analyze any biological process, the differences between forms become significant — especially if your goal is cognitive performance and longevity, not just correcting a deficiency.

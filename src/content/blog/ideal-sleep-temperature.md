@@ -7,7 +7,8 @@ author: "Bernardo Paranhos"
 rctSources: 5
 readTime: "9 min"
 category: "Sleep"
-heroImage: "../../assets/blog-placeholder-1.jpg"
+heroImage: "../../assets/sleep-temperature-hero.jpg"
+excerpt: "Most people are sleeping in rooms that are too warm — and it's silently destroying their deep sleep. Here's what the research actually says."
 ---
 
 *Last updated: March 2026 · Based on 5 peer-reviewed studies*

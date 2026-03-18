@@ -4,9 +4,10 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
+const allPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
 ---
 
 <!doctype html>
@@ -41,7 +42,7 @@ const posts = (await getCollection('blog'))
         <div class="nl-left">
           <div class="nl-eyebrow">Free weekly digest</div>
           <div class="nl-title">Join early readers of LongevityStack.</div>
-<div class="nl-sub">One email. Three studies. Only what actually works.</div>
+          <div class="nl-sub">One email. Three studies. Only what actually works.</div>
         </div>
         <div class="nl-form">
           <input type="email" placeholder="your@email.com" />
@@ -92,16 +93,47 @@ const posts = (await getCollection('blog'))
 
       <!-- LATEST ARTICLES -->
       <div class="section-label" style="margin-top: 56px;">Latest articles</div>
-      <div class="articles-grid">
-        {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="article-card">
-            <div class="article-category">{post.data.category}</div>
-            <div class="article-title">{post.data.title}</div>
-            <div class="article-meta">
-              {post.data.readTime && <span>{post.data.readTime} read</span>}
-              {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+
+      <div class="articles-featured">
+        {posts.slice(0, 2).map((post) => (
+          <a href={`/blog/${post.id}`} class="article-featured-card">
+            <div class="article-featured-img">
+  {post.data.heroImage
+    ? <img src={post.data.heroImage.src} alt={post.data.title} style="width:100%;height:100%;object-fit:cover;" />
+    : <div class="article-featured-placeholder" />
+  }
+</div>
+            <div class="article-featured-body">
+              <div class="card-top">
+                <div class="article-category">{post.data.category}</div>
+                <div class="article-meta">
+                  {post.data.readTime && <span>{post.data.readTime} read</span>}
+                  {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+                </div>
+              </div>
+              <div class="article-featured-title">{post.data.title}</div>
+              <div class="article-featured-desc">{post.data.description}</div>
+              <div class="article-arrow">Read the full analysis →</div>
             </div>
-            <div class="article-arrow">Read the full analysis →</div>
+          </a>
+        ))}
+      </div>
+
+      <div class="articles-grid" style="margin-top: 32px;">
+        {posts.slice(2).map((post) => (
+          <a href={`/blog/${post.id}`} class="article-card">
+            <div class="card-top">
+              <div class="article-category">{post.data.category}</div>
+              <div class="article-meta">
+                {post.data.readTime && <span>{post.data.readTime} read</span>}
+                {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+              </div>
+            </div>
+            <div class="article-title">{post.data.title}</div>
+{post.data.excerpt && (
+  <div class="article-excerpt">{post.data.excerpt}</div>
+)}
+<div class="article-arrow">Read the full analysis →</div>
           </a>
         ))}
       </div>
@@ -138,15 +170,6 @@ const posts = (await getCollection('blog'))
 
   .section-label { text-align: center; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: #B4B2A9; margin-bottom: 20px; }
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
-  @media(max-width: 640px) {
-    .pillars { grid-template-columns: 1fr; }
-    .featured { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 28px; }
-    .nl-form input { width: 100%; }
-    .nl-form { flex-direction: column; }
-    .author-strip { flex-direction: column; }
-    .about-link { margin-left: 0; }
-  }
   .pillar { background: #fff; border: 0.5px solid var(--color-border); border-radius: 12px; padding: 22px 18px; text-align: center; }
   .pillar-icon { width: 38px; height: 38px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
   .pillar h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
@@ -160,14 +183,44 @@ const posts = (await getCollection('blog'))
   .stat-n { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--color-green); line-height: 1; }
   .stat-l { font-size: 9px; color: var(--color-hint); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
 
+  /* ARTICLES GRID */
   .articles-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
-  .article-card { display: flex; flex-direction: column; gap: 6px; padding: 22px 16px; border-bottom: 0.5px solid var(--color-border); text-decoration: none; border-radius: 8px; transition: background 0.15s; }
+  .article-card { display: flex; flex-direction: column; gap: 8px; padding: 24px 20px; border-bottom: 0.5px solid var(--color-border); text-decoration: none; border-radius: 8px; transition: background 0.15s; }
   .article-card:first-child { border-top: 0.5px solid var(--color-border); }
   .article-card:hover { background: var(--color-surface); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .article-category { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-green); }
-  .article-title { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.4; }
-  .article-meta { font-size: 12px; color: var(--color-hint); display: flex; gap: 12px; }
+  .article-meta { font-size: 11px; color: var(--color-hint); display: flex; gap: 10px; }
+  .article-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--color-text); line-height: 1.4; }
+  .article-excerpt { font-size: 13px; color: var(--color-muted); line-height: 1.65; max-width: 640px; }
   .article-arrow { font-size: 12px; color: var(--color-green); font-weight: 500; margin-top: 4px; }
+
   .second-cta { display: flex; align-items: center; justify-content: space-between; background: var(--color-surface); border-radius: 12px; padding: 20px 24px; margin: 40px 0; flex-wrap: wrap; gap: 16px; }
   .second-cta span { font-size: 15px; color: var(--color-muted); font-weight: 500; }
+
+  @media(max-width: 640px) {
+    .pillars { grid-template-columns: 1fr; }
+    .featured { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .nl-form input { width: 100%; }
+    .nl-form { flex-direction: column; }
+    .author-strip { flex-direction: column; }
+    .about-link { margin-left: 0; }
+    .card-top { flex-direction: column; align-items: flex-start; }
+  }
+
+  .articles-featured { display: flex; flex-direction: column; gap: 16px; margin-bottom: 8px; }
+  .article-featured-card { display: grid; grid-template-columns: 260px 1fr; gap: 0; background: #fff; border: 0.5px solid var(--color-border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: box-shadow 0.15s; }
+  .article-featured-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .article-featured-img { width: 260px; min-height: 200px; }
+  .article-featured-placeholder { width: 100%; height: 100%; min-height: 200px; background: var(--color-surface); }
+  .article-featured-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+  .article-featured-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+  .article-featured-desc { font-size: 13px; color: var(--color-muted); line-height: 1.65; }
+
+  @media(max-width: 640px) {
+    .article-featured-card { grid-template-columns: 1fr; }
+    .article-featured-img { width: 100%; height: 160px; }
+  }
+
 </style>
