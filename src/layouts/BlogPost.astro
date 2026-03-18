@@ -116,11 +116,29 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
   }
 
   .hero-image img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .hero-image img {
+    height: 220px;
   }
+
+  main {
+    padding: 0 20px 60px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .article-header {
+    padding: 32px 0 24px;
+  }
+}
 
   /* PROSE STYLES */
 .prose {
