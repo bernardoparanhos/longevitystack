@@ -27,31 +27,55 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
         <a href="/start-here" class="cta">Start here: fundamentals →</a>
       </section>
 
-      <!-- AUTHOR STRIP -->
-      <div class="author-strip">
-        <div class="avatar">BP</div>
-        <div>
-          <div class="author-name">Bernardo Paranhos</div>
-          <div class="author-bio">Production Engineering student · UTFPR · <strong>Systems & Longevity Researcher</strong> — I apply industrial systems thinking to optimize human biology.</div>
-        </div>
-        <a href="/about" class="about-link">Full bio →</a>
+      <!-- LATEST ARTICLES — imediato após hero -->
+      <div class="section-label" style="margin-top: 56px;">Latest articles</div>
+
+      <div class="articles-featured">
+        {posts.slice(0, 2).map((post) => (
+          <a href={`/blog/${post.id}`} class="article-featured-card">
+            <div class="article-featured-img">
+              {post.data.heroImage
+                ? <img src={post.data.heroImage.src} alt={post.data.title} style="width:100%;height:100%;object-fit:cover;" />
+                : <div class="article-featured-placeholder" />
+              }
+            </div>
+            <div class="article-featured-body">
+              <div class="card-top">
+                <div class="article-category">{post.data.category}</div>
+                <div class="article-meta">
+                  {post.data.readTime && <span>{post.data.readTime} read</span>}
+                  {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+                </div>
+              </div>
+              <div class="article-featured-title">{post.data.title}</div>
+              <div class="article-featured-desc">{post.data.excerpt || post.data.description}</div>
+              <div class="article-arrow">Read the full analysis →</div>
+            </div>
+          </a>
+        ))}
       </div>
 
-      <!-- NEWSLETTER -->
-      <div class="newsletter">
-        <div class="nl-left">
-          <div class="nl-eyebrow">Free weekly digest</div>
-          <div class="nl-title">Join early readers of LongevityStack.</div>
-          <div class="nl-sub">One email. Three studies. Only what actually works.</div>
-        </div>
-        <div class="nl-form">
-          <input type="email" placeholder="your@email.com" />
-          <button>Subscribe →</button>
-        </div>
+      <div class="articles-grid" style="margin-top: 32px;">
+        {posts.slice(2).map((post) => (
+          <a href={`/blog/${post.id}`} class="article-card">
+            <div class="card-top">
+              <div class="article-category">{post.data.category}</div>
+              <div class="article-meta">
+                {post.data.readTime && <span>{post.data.readTime} read</span>}
+                {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+              </div>
+            </div>
+            <div class="article-title">{post.data.title}</div>
+            {post.data.excerpt && (
+              <div class="article-excerpt">{post.data.excerpt}</div>
+            )}
+            <div class="article-arrow">Read the full analysis →</div>
+          </a>
+        ))}
       </div>
 
       <!-- PILLARS -->
-      <div class="section-label">The three pillars</div>
+      <div class="section-label" style="margin-top: 64px;">The three pillars</div>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-icon" style="background:#EAF3DE">🌙</div>
@@ -91,51 +115,27 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
         <a href="/start-here" class="cta" style="font-size:13px;padding:10px 22px;">Start with the fundamentals →</a>
       </div>
 
-      <!-- LATEST ARTICLES -->
-      <div class="section-label" style="margin-top: 56px;">Latest articles</div>
-
-      <div class="articles-featured">
-        {posts.slice(0, 2).map((post) => (
-          <a href={`/blog/${post.id}`} class="article-featured-card">
-            <div class="article-featured-img">
-  {post.data.heroImage
-    ? <img src={post.data.heroImage.src} alt={post.data.title} style="width:100%;height:100%;object-fit:cover;" />
-    : <div class="article-featured-placeholder" />
-  }
-</div>
-            <div class="article-featured-body">
-              <div class="card-top">
-                <div class="article-category">{post.data.category}</div>
-                <div class="article-meta">
-                  {post.data.readTime && <span>{post.data.readTime} read</span>}
-                  {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
-                </div>
-              </div>
-              <div class="article-featured-title">{post.data.title}</div>
-              <div class="article-featured-desc">{post.data.description}</div>
-              <div class="article-arrow">Read the full analysis →</div>
-            </div>
-          </a>
-        ))}
+      <!-- AUTHOR STRIP -->
+      <div class="author-strip">
+        <div class="avatar">BP</div>
+        <div>
+          <div class="author-name">Bernardo Paranhos</div>
+          <div class="author-bio">Production Engineering student · UTFPR · <strong>Systems & Longevity Researcher</strong> — I apply industrial systems thinking to optimize human biology.</div>
+        </div>
+        <a href="/about" class="about-link">Full bio →</a>
       </div>
 
-      <div class="articles-grid" style="margin-top: 32px;">
-        {posts.slice(2).map((post) => (
-          <a href={`/blog/${post.id}`} class="article-card">
-            <div class="card-top">
-              <div class="article-category">{post.data.category}</div>
-              <div class="article-meta">
-                {post.data.readTime && <span>{post.data.readTime} read</span>}
-                {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
-              </div>
-            </div>
-            <div class="article-title">{post.data.title}</div>
-{post.data.excerpt && (
-  <div class="article-excerpt">{post.data.excerpt}</div>
-)}
-<div class="article-arrow">Read the full analysis →</div>
-          </a>
-        ))}
+      <!-- NEWSLETTER -->
+      <div class="newsletter">
+        <div class="nl-left">
+          <div class="nl-eyebrow">Free weekly digest</div>
+          <div class="nl-title">Join early readers of LongevityStack.</div>
+          <div class="nl-sub">One email. Three studies. Only what actually works.</div>
+        </div>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com" />
+          <button>Subscribe →</button>
+        </div>
       </div>
 
     </main>
@@ -153,35 +153,17 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
   .cta { display: inline-flex; align-items: center; background: var(--color-green); color: #EAF3DE; font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
   .cta:hover { text-decoration: none; opacity: 0.9; }
 
-  .author-strip { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border-radius: 12px; padding: 18px 22px; margin-bottom: 32px; flex-wrap: wrap; }
-  .avatar { width: 44px; height: 44px; border-radius: 50%; background: #C0DD97; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--color-green); flex-shrink: 0; }
-  .author-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
-  .author-bio { font-size: 12px; color: var(--color-muted); line-height: 1.6; }
-  .author-bio strong { color: var(--color-green); }
-  .about-link { font-size: 11px; color: var(--color-green); font-weight: 600; padding: 7px 14px; border: 0.5px solid #C0DD97; border-radius: 8px; margin-left: auto; white-space: nowrap; text-decoration: none; }
-
-  .newsletter { background: #1a1a18; border-radius: 12px; padding: 24px 28px; margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .nl-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--color-green-mid); font-weight: 600; margin-bottom: 6px; }
-  .nl-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FAFAF7; line-height: 1.3; }
-  .nl-sub { font-size: 11px; color: #888780; margin-top: 5px; }
-  .nl-form { display: flex; gap: 8px; flex-wrap: wrap; }
-  .nl-form input { background: #2a2a28; border: 0.5px solid #444441; border-radius: 8px; padding: 9px 14px; font-size: 13px; color: #FAFAF7; font-family: 'Inter', sans-serif; width: 200px; outline: none; }
-  .nl-form button { background: var(--color-green-mid); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer; }
-
   .section-label { text-align: center; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: #B4B2A9; margin-bottom: 20px; }
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
-  .pillar { background: #fff; border: 0.5px solid var(--color-border); border-radius: 12px; padding: 22px 18px; text-align: center; }
-  .pillar-icon { width: 38px; height: 38px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
-  .pillar h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
-  .pillar p { font-size: 11px; color: var(--color-hint); line-height: 1.6; }
 
-  .featured { background: var(--color-surface); border-radius: 16px; padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
-  .feat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-hint); margin-bottom: 12px; }
-  .featured h2 { font-size: 22px; margin-bottom: 12px; }
-  .featured p { font-size: 13px; color: var(--color-muted); line-height: 1.75; margin-bottom: 22px; }
-  .feat-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat-n { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--color-green); line-height: 1; }
-  .stat-l { font-size: 9px; color: var(--color-hint); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+  /* ARTICLES FEATURED */
+  .articles-featured { display: flex; flex-direction: column; gap: 16px; margin-bottom: 8px; }
+  .article-featured-card { display: grid; grid-template-columns: 260px 1fr; gap: 0; background: #fff; border: 0.5px solid var(--color-border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: box-shadow 0.15s; }
+  .article-featured-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .article-featured-img { width: 260px; min-height: 200px; }
+  .article-featured-placeholder { width: 100%; height: 100%; min-height: 200px; background: var(--color-surface); }
+  .article-featured-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+  .article-featured-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+  .article-featured-desc { font-size: 13px; color: var(--color-muted); line-height: 1.65; }
 
   /* ARTICLES GRID */
   .articles-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
@@ -195,9 +177,44 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
   .article-excerpt { font-size: 13px; color: var(--color-muted); line-height: 1.65; max-width: 640px; }
   .article-arrow { font-size: 12px; color: var(--color-green); font-weight: 500; margin-top: 4px; }
 
-  .second-cta { display: flex; align-items: center; justify-content: space-between; background: var(--color-surface); border-radius: 12px; padding: 20px 24px; margin: 40px 0; flex-wrap: wrap; gap: 16px; }
+  /* PILLARS */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
+  .pillar { background: #fff; border: 0.5px solid var(--color-border); border-radius: 12px; padding: 22px 18px; text-align: center; }
+  .pillar-icon { width: 38px; height: 38px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+  .pillar h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .pillar p { font-size: 11px; color: var(--color-hint); line-height: 1.6; }
+
+  /* FEATURED */
+  .featured { background: var(--color-surface); border-radius: 16px; padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; margin-bottom: 32px; }
+  .feat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-hint); margin-bottom: 12px; }
+  .featured h2 { font-size: 22px; margin-bottom: 12px; }
+  .featured p { font-size: 13px; color: var(--color-muted); line-height: 1.75; margin-bottom: 22px; }
+  .feat-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-n { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--color-green); line-height: 1; }
+  .stat-l { font-size: 9px; color: var(--color-hint); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+
+  /* SECOND CTA */
+  .second-cta { display: flex; align-items: center; justify-content: space-between; background: var(--color-surface); border-radius: 12px; padding: 20px 24px; margin: 0 0 40px; flex-wrap: wrap; gap: 16px; }
   .second-cta span { font-size: 15px; color: var(--color-muted); font-weight: 500; }
 
+  /* AUTHOR STRIP */
+  .author-strip { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border-radius: 12px; padding: 18px 22px; margin-bottom: 32px; flex-wrap: wrap; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: #C0DD97; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--color-green); flex-shrink: 0; }
+  .author-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+  .author-bio { font-size: 12px; color: var(--color-muted); line-height: 1.6; }
+  .author-bio strong { color: var(--color-green); }
+  .about-link { font-size: 11px; color: var(--color-green); font-weight: 600; padding: 7px 14px; border: 0.5px solid #C0DD97; border-radius: 8px; margin-left: auto; white-space: nowrap; text-decoration: none; }
+
+  /* NEWSLETTER */
+  .newsletter { background: #1a1a18; border-radius: 12px; padding: 24px 28px; margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .nl-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--color-green-mid); font-weight: 600; margin-bottom: 6px; }
+  .nl-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FAFAF7; line-height: 1.3; }
+  .nl-sub { font-size: 11px; color: #888780; margin-top: 5px; }
+  .nl-form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .nl-form input { background: #2a2a28; border: 0.5px solid #444441; border-radius: 8px; padding: 9px 14px; font-size: 13px; color: #FAFAF7; font-family: 'Inter', sans-serif; width: 200px; outline: none; }
+  .nl-form button { background: var(--color-green-mid); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer; }
+
+  /* MOBILE */
   @media(max-width: 640px) {
     .pillars { grid-template-columns: 1fr; }
     .featured { grid-template-columns: 1fr; }
@@ -207,20 +224,7 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
     .author-strip { flex-direction: column; }
     .about-link { margin-left: 0; }
     .card-top { flex-direction: column; align-items: flex-start; }
-  }
-
-  .articles-featured { display: flex; flex-direction: column; gap: 16px; margin-bottom: 8px; }
-  .article-featured-card { display: grid; grid-template-columns: 260px 1fr; gap: 0; background: #fff; border: 0.5px solid var(--color-border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: box-shadow 0.15s; }
-  .article-featured-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-  .article-featured-img { width: 260px; min-height: 200px; }
-  .article-featured-placeholder { width: 100%; height: 100%; min-height: 200px; background: var(--color-surface); }
-  .article-featured-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
-  .article-featured-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
-  .article-featured-desc { font-size: 13px; color: var(--color-muted); line-height: 1.65; }
-
-  @media(max-width: 640px) {
     .article-featured-card { grid-template-columns: 1fr; }
-    .article-featured-img { width: 100%; height: 160px; }
+    .article-featured-img { width: 100%; height: 180px; }
   }
-
 </style>
