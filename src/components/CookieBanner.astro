@@ -1,0 +1,78 @@
+---
+// CookieBanner.astro
+---
+
+
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    We use cookies to analyze traffic and serve personalized ads. 
+    See our <a href="/privacy-policy">Privacy Policy</a>.
+  </p>
+  <div class="cookie-actions">
+    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a18;
+    color: #FAFAF7;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    z-index: 999;
+    font-size: 13px;
+    border-top: 1px solid #333;
+  }
+  .cookie-banner p { margin: 0; color: #B4B2A9; line-height: 1.5; }
+  .cookie-banner a { color: var(--color-green-mid); }
+  .cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  #cookie-accept {
+    background: var(--color-green-mid);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #cookie-decline {
+    background: transparent;
+    color: #888780;
+    border: 1px solid #444;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const consent = localStorage.getItem('cookie_consent');
+
+  // Se já decidiu antes, esconde o banner
+  if (consent) {
+    banner.style.display = 'none';
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'accepted');
+    banner.style.display = 'none';
+    // Dispara GA4 manualmente se necessário
+  });
+
+  document.getElementById('cookie-decline')?.addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'declined');
+    banner.style.display = 'none';
+  });
+</script>

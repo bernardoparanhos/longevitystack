@@ -1,4 +1,5 @@
 ---
+import CookieBanner from '../components/CookieBanner.astro';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
@@ -43,6 +44,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
       </div>
 
     </main>
+    <CookieBanner />
     <Footer />
   </body>
 </html>
