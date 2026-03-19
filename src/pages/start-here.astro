@@ -129,14 +129,59 @@ import Header from '../components/Header.astro';
       <div class="newsletter-box">
         <div class="nl-eyebrow">Free weekly digest</div>
         <div class="nl-title">Get the weekly LongevityStack deep dive.</div>
-<div class="nl-sub">Evidence-based. No hype. No influencer noise. Used by engineering students and professionals optimizing performance.</div>
+        <div class="nl-sub">Evidence-based. No hype. No influencer noise. Used by engineering students and professionals optimizing performance.</div>
         <div class="nl-form">
-          <input type="email" placeholder="your@email.com" />
-          <button>Subscribe →</button>
+          <input id="sh-email" type="email" placeholder="your@email.com" />
+          <button id="sh-submit">Subscribe →</button>
         </div>
+        <div id="sh-message" style="font-size:12px;margin-top:10px;display:none;"></div>
         <div style="font-size:11px;color:#5F5E5A;margin-top:10px;">No spam. Unsubscribe anytime. Join early readers of LongevityStack.</div>
       </div>
 
+      <script>
+        document.getElementById('sh-submit')?.addEventListener('click', async () => {
+          const email = (document.getElementById('sh-email') as HTMLInputElement).value;
+          const msg = document.getElementById('sh-message');
+          if (!email || !email.includes('@')) {
+            msg.style.display = 'block';
+            msg.style.color = '#ff6b6b';
+            msg.textContent = 'Please enter a valid email address.';
+            return;
+          }
+          const btn = document.getElementById('sh-submit');
+          btn.textContent = 'Subscribing...';
+          btn.setAttribute('disabled', 'true');
+          try {
+            const res = await fetch('https://api.brevo.com/v3/contacts', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'api-key': import.meta.env.PUBLIC_BREVO_API_KEY
+              },
+              body: JSON.stringify({
+                email: email,
+                listIds: [2],
+                updateEnabled: true
+              })
+            });
+            if (res.ok || res.status === 204) {
+              msg.style.display = 'block';
+              msg.style.color = '#639922';
+              msg.textContent = '✓ You\'re in! Check your inbox soon.';
+              (document.getElementById('sh-email') as HTMLInputElement).value = '';
+            } else {
+              throw new Error('API error');
+            }
+          } catch {
+            msg.style.display = 'block';
+            msg.style.color = '#ff6b6b';
+            msg.textContent = 'Something went wrong. Try again.';
+          } finally {
+            btn.textContent = 'Subscribe →';
+            btn.removeAttribute('disabled');
+          }
+        });
+      </script>
     </main>
     <CookieBanner />
     <Footer />

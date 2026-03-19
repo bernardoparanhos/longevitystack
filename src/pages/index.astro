@@ -139,6 +139,7 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
       </div>
 
       <!-- NEWSLETTER -->
+      <!-- NEWSLETTER -->
       <div class="newsletter">
         <div class="nl-left">
           <div class="nl-eyebrow">Free weekly digest</div>
@@ -146,10 +147,56 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
           <div class="nl-sub">One email. Three studies. Only what actually works.</div>
         </div>
         <div class="nl-form">
-          <input type="email" placeholder="your@email.com" />
-          <button>Subscribe →</button>
+          <input id="nl-email" type="email" placeholder="your@email.com" />
+          <button id="nl-submit">Subscribe →</button>
         </div>
+        <div id="nl-message" style="width:100%;font-size:12px;margin-top:8px;display:none;"></div>
       </div>
+
+      <script>
+        document.getElementById('nl-submit')?.addEventListener('click', async () => {
+          const email = (document.getElementById('nl-email') as HTMLInputElement).value;
+          const msg = document.getElementById('nl-message');
+          if (!email || !email.includes('@')) {
+            msg.style.display = 'block';
+            msg.style.color = '#ff6b6b';
+            msg.textContent = 'Please enter a valid email address.';
+            return;
+          }
+          const btn = document.getElementById('nl-submit');
+          btn.textContent = 'Subscribing...';
+          btn.setAttribute('disabled', 'true');
+          try {
+            const res = await fetch('https://api.brevo.com/v3/contacts', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'api-key': import.meta.env.PUBLIC_BREVO_API_KEY
+              },
+              body: JSON.stringify({
+                email: email,
+                listIds: [2],
+                updateEnabled: true
+              })
+            });
+            if (res.ok || res.status === 204) {
+              msg.style.display = 'block';
+              msg.style.color = '#639922';
+              msg.textContent = '✓ You\'re in! Check your inbox soon.';
+              (document.getElementById('nl-email') as HTMLInputElement).value = '';
+            } else {
+              throw new Error('API error');
+            }
+          } catch {
+            msg.style.display = 'block';
+            msg.style.color = '#ff6b6b';
+            msg.textContent = 'Something went wrong. Try again.';
+          } finally {
+            btn.textContent = 'Subscribe →';
+            btn.removeAttribute('disabled');
+          }
+        });
+      </script>
 
     </main>
     <CookieBanner />
