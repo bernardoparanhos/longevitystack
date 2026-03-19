@@ -15,6 +15,37 @@ const { title, description, pubDate, updatedDate, heroImage, author, rctSources,
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "datePublished": pubDate.toISOString(),
+      "dateModified": updatedDate ? updatedDate.toISOString() : pubDate.toISOString(),
+      "author": {
+        "@type": "Person",
+        "name": "Bernardo Paranhos",
+        "url": "https://longevitystack.org/about",
+        "jobTitle": "Production Engineering Student",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "UTFPR"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LongevityStack",
+        "url": "https://longevitystack.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://longevitystack.org/faviconlonge.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://longevitystack.org/blog/${Astro.params.slug}`
+      }
+    })} />
   </head>
   <body>
     <Header />
