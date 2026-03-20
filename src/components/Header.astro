@@ -1,4 +1,10 @@
 ---
+const pathname = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  if (href === '/about') return pathname === '/about';
+  return pathname.startsWith(href);
+};
 ---
 
 <header>
@@ -11,10 +17,10 @@
     </button>
     <div class="nav-links" id="nav-links">
       <a href="/start-here" class="nav-start">Start Here</a>
-      <a href="/blog/sleep">Sleep</a>
-      <a href="/blog/supplements">Supplements</a>
-      <a href="/blog/cognition">Cognition</a>
-      <a href="/about">About</a>
+      <a href="/blog/sleep"        class={isActive('/blog/sleep')        ? 'active' : ''}>Sleep</a>
+      <a href="/blog/supplements"  class={isActive('/blog/supplements')  ? 'active' : ''}>Supplements</a>
+      <a href="/blog/cognition"    class={isActive('/blog/cognition')    ? 'active' : ''}>Cognition</a>
+      <a href="/about"             class={isActive('/about')             ? 'active' : ''}>About</a>
     </div>
   </nav>
 </header>
@@ -66,6 +72,23 @@
     font-weight: 600 !important;
     background: var(--color-green-light);
   }
+ .nav-links a.active {
+  color: var(--color-green);
+  position: relative;
+  border-radius: 0;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--color-green);
+  border-radius: 2px;
+}
 
   /* HAMBURGER */
   .hamburger {
@@ -131,5 +154,25 @@
       hamburger?.classList.remove('open');
       navLinks?.classList.remove('open');
     }
+  });
+
+  // ← COLA AQUI EMBAIXO
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (
+        !href || href.startsWith('#') || href.startsWith('http') ||
+        e.metaKey || e.ctrlKey || e.shiftKey
+      ) return;
+
+      e.preventDefault();
+      document.body.style.transition = 'opacity 0.12s ease, transform 0.12s ease';
+      document.body.style.opacity = '0';
+      document.body.style.transform = 'translateY(-6px)';
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 120);
+    });
   });
 </script>

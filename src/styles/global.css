@@ -94,3 +94,12 @@ header {
 .prose tr:nth-child(even) td {
   background: var(--color-surface) !important;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  animation: fadeIn 0.2s ease forwards;
+}

@@ -3,7 +3,7 @@
 ---
 
 
-<div id="cookie-banner" class="cookie-banner">
+<div id="cookie-banner" class="cookie-banner" style="display:none">
   <p>
     We use cookies to analyze traffic and serve personalized ads. 
     See our <a href="/privacy-policy">Privacy Policy</a>.
@@ -61,9 +61,9 @@
   const consent = localStorage.getItem('cookie_consent');
 
   // Se já decidiu antes, esconde o banner
-  if (consent) {
-    banner.style.display = 'none';
-  }
+  if (!consent) {
+  banner.style.display = 'flex';
+}
 
   document.getElementById('cookie-accept')?.addEventListener('click', () => {
     localStorage.setItem('cookie_consent', 'accepted');
