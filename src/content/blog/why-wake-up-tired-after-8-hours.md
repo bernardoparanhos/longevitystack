@@ -107,7 +107,7 @@ If you don't measure it, you're guessing.
 
 This is the fastest way to find out:
 
-<a href="https://amzn.to/40O7lri" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
+<a href="https://amzn.to/4src1zs" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
 
 → Full breakdown: [Ideal Sleep Temperature: What the Research Actually Says](/blog/ideal-sleep-temperature)
 
