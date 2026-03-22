@@ -16,6 +16,9 @@ const countByCategory = Object.fromEntries(
     cat === 'All' ? posts.length : posts.filter(p => p.data.category === cat).length
   ])
 );
+
+// Featured: artigo com mais RCT sources
+const featured = [...posts].sort((a, b) => (b.data.rctSources || 0) - (a.data.rctSources || 0))[0];
 ---
 
 <!doctype html>
@@ -30,21 +33,39 @@ const countByCategory = Object.fromEntries(
     <Header />
     <main>
 
+      <!-- HEADER -->
       <div class="page-header">
         <h1>All Articles</h1>
-        <p>{posts.length} evidence-based guides — sleep, supplements, and cognitive performance.</p>
+        <p>No fluff. Just what improves sleep, focus, and longevity — backed by peer-reviewed research.</p>
       </div>
+
+      <!-- FEATURED -->
+      {featured && (
+        <a href={`/blog/${featured.id}`} class="featured-card">
+          <div class="featured-left">
+            <div class="featured-label">Featured analysis</div>
+            <div class="featured-title">{featured.data.title}</div>
+            <div class="featured-excerpt">{featured.data.excerpt || featured.data.description}</div>
+            <div class="featured-meta">
+              <span class="featured-cat">{featured.data.category}</span>
+              {featured.data.readTime && <span>{featured.data.readTime} read</span>}
+              {featured.data.rctSources && <span>{featured.data.rctSources} RCT sources</span>}
+            </div>
+          </div>
+          <div class="featured-arrow">Read the analysis →</div>
+        </a>
+      )}
 
       <!-- FILTERS -->
       <div class="filters" id="filters">
-      {categories.map((cat) => (
-  <button
-    class={`filter-btn ${cat === 'All' ? 'active' : ''}`}
-    data-category={cat}
-  >
-    {cat} <span class="filter-count">{countByCategory[cat]}</span>
-  </button>
-))}
+        {categories.map((cat) => (
+          <button
+            class={`filter-btn ${cat === 'All' ? 'active' : ''}`}
+            data-category={cat}
+          >
+            {cat} <span class="filter-count">{countByCategory[cat]}</span>
+          </button>
+        ))}
       </div>
 
       <!-- COUNT -->
@@ -58,16 +79,19 @@ const countByCategory = Object.fromEntries(
             class="article-card"
             data-category={post.data.category}
           >
-            <div class="card-top">
-              <div class="article-category">{post.data.category}</div>
-              <div class="article-meta">
-                {post.data.readTime && <span>{post.data.readTime} read</span>}
-                {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+            <div class="card-left-accent"></div>
+            <div class="card-body">
+              <div class="card-top">
+                <div class="article-category">{post.data.category}</div>
+                <div class="article-meta">
+                  {post.data.readTime && <span>{post.data.readTime} read</span>}
+                  {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+                </div>
               </div>
+              <div class="article-title">{post.data.title}</div>
+              <div class="article-excerpt">{post.data.excerpt || post.data.description}</div>
+              <div class="article-arrow">Read the full analysis →</div>
             </div>
-            <div class="article-title">{post.data.title}</div>
-            <div class="article-excerpt">{post.data.excerpt || post.data.description}</div>
-            <div class="article-arrow">Read the full analysis →</div>
           </a>
         ))}
       </div>
@@ -99,11 +123,9 @@ const countByCategory = Object.fromEntries(
     btn.addEventListener('click', () => {
       const cat = btn.getAttribute('data-category');
 
-      // Update active button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Filter cards
       let visible = 0;
       cards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
@@ -112,40 +134,22 @@ const countByCategory = Object.fromEntries(
         if (show) visible++;
       });
 
-      // Update count
       const label = cat === 'All' ? `${visible} articles` : `${visible} article${visible !== 1 ? 's' : ''} in ${cat}`;
       countEl.textContent = label;
 
-      // Empty state
       emptyEl.style.display = visible === 0 ? 'block' : 'none';
     });
   });
 </script>
 
 <style>
-    .filter-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.08);
-  border-radius: 10px;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 1px 6px;
-  margin-left: 4px;
-}
-
-.filter-btn.active .filter-count {
-  background: rgba(255,255,255,0.2);
-}
-
   main { max-width: 900px; margin: 0 auto; padding: 0 28px 80px; }
 
+  /* HEADER */
   .page-header {
     padding: 56px 0 32px;
     max-width: 640px;
   }
-
   .page-header h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
@@ -154,11 +158,73 @@ const countByCategory = Object.fromEntries(
     margin-bottom: 10px;
     color: var(--color-text);
   }
-
   .page-header p {
     font-size: 15px;
     color: var(--color-muted);
     line-height: 1.75;
+  }
+
+  /* FEATURED */
+  .featured-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--color-green-light);
+    border: 0.5px solid #C0DD97;
+    border-radius: 12px;
+    padding: 24px 28px;
+    text-decoration: none;
+    margin-bottom: 36px;
+    transition: box-shadow 0.15s;
+  }
+  .featured-card:hover { box-shadow: 0 4px 16px rgba(59,109,17,0.12); }
+  .featured-left { flex: 1; }
+  .featured-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-green);
+    margin-bottom: 8px;
+  }
+  .featured-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .featured-excerpt {
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .featured-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .featured-cat {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-green);
+  }
+  .featured-meta span {
+    font-size: 11px;
+    color: var(--color-hint);
+  }
+  .featured-arrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-green);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* FILTERS */
@@ -168,7 +234,6 @@ const countByCategory = Object.fromEntries(
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
-
   .filter-btn {
     font-size: 12px;
     font-weight: 600;
@@ -181,16 +246,28 @@ const countByCategory = Object.fromEntries(
     transition: all 0.15s;
     font-family: 'Inter', sans-serif;
   }
-
   .filter-btn:hover {
     border-color: var(--color-green);
     color: var(--color-green);
   }
-
   .filter-btn.active {
     background: var(--color-green);
     color: #EAF3DE;
     border-color: var(--color-green);
+  }
+  .filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.08);
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    margin-left: 4px;
+  }
+  .filter-btn.active .filter-count {
+    background: rgba(255,255,255,0.2);
   }
 
   /* COUNT */
@@ -203,13 +280,40 @@ const countByCategory = Object.fromEntries(
 
   /* ARTICLES */
   .articles-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
-  .article-card { display: flex; flex-direction: column; gap: 8px; padding: 24px 20px; border-bottom: 0.5px solid var(--color-border); text-decoration: none; border-radius: 8px; transition: background 0.15s; }
+  .article-card {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    border-bottom: 0.5px solid var(--color-border);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.15s;
+    overflow: hidden;
+  }
   .article-card:first-child { border-top: 0.5px solid var(--color-border); }
   .article-card:hover { background: var(--color-surface); }
+  .article-card:hover .card-left-accent { background: var(--color-green); }
+
+  .card-left-accent {
+    width: 3px;
+    flex-shrink: 0;
+    background: transparent;
+    transition: background 0.15s;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 20px;
+    flex: 1;
+  }
+
   .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .article-category { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-green); }
   .article-meta { font-size: 11px; color: var(--color-hint); display: flex; gap: 10px; }
-  .article-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--color-text); line-height: 1.4; }
+  .article-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 600; color: var(--color-text); line-height: 1.4; }
   .article-excerpt { font-size: 13px; color: var(--color-muted); line-height: 1.65; max-width: 640px; }
   .article-arrow { font-size: 12px; color: var(--color-green); font-weight: 500; margin-top: 4px; }
 
@@ -231,5 +335,7 @@ const countByCategory = Object.fromEntries(
     .card-top { flex-direction: column; align-items: flex-start; }
     .second-cta { flex-direction: column; }
     .filters { gap: 6px; }
+    .featured-card { flex-direction: column; }
+    .featured-arrow { align-self: flex-start; }
   }
 </style>
