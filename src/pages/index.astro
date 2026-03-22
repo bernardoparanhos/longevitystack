@@ -57,7 +57,7 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
       </div>
 
       <div class="articles-grid" style="margin-top: 32px;">
-        {posts.slice(2).map((post) => (
+        {posts.slice(2, 5).map((post) => (
           <a href={`/blog/${post.id}`} class="article-card">
             <div class="card-top">
               <div class="article-category">{post.data.category}</div>
@@ -73,7 +73,7 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
             <div class="article-arrow">Read the full analysis →</div>
           </a>
         ))}
-      </div>
+      <a href="/blog" style="display:block;text-align:center;font-size:12px;color:var(--color-green);font-weight:600;padding:16px 0;text-decoration:none;">View all articles →</a>
 
       <!-- PILLARS -->
      <div class="pillars">
@@ -143,8 +143,8 @@ const posts = allPosts.filter(p => p.id !== 'magnesium-glycinate-vs-threonate');
       <div class="newsletter">
         <div class="nl-left">
           <div class="nl-eyebrow">Free weekly digest</div>
-          <div class="nl-title">Join early readers of LongevityStack.</div>
-          <div class="nl-sub">One email. Three studies. Only what actually works.</div>
+          <div class="nl-title">Free weekly protocol.</div>
+          <div class="nl-sub">One actionable protocol per week — what to take, when to take it, what actually works. No noise. No trends. Only evidence.</div>
         </div>
         <div class="nl-form">
           <input id="nl-email" type="email" placeholder="your@email.com" />

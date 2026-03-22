@@ -1,0 +1,235 @@
+---
+import CookieBanner from '../../components/CookieBanner.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = ['All', ...new Set(posts.map(p => p.data.category))];
+
+const countByCategory = Object.fromEntries(
+  categories.map(cat => [
+    cat,
+    cat === 'All' ? posts.length : posts.filter(p => p.data.category === cat).length
+  ])
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="All Articles — LongevityStack"
+      description="Browse all evidence-based articles on sleep optimization, supplementation, and cognitive performance."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <div class="page-header">
+        <h1>All Articles</h1>
+        <p>{posts.length} evidence-based guides — sleep, supplements, and cognitive performance.</p>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="filters" id="filters">
+      {categories.map((cat) => (
+  <button
+    class={`filter-btn ${cat === 'All' ? 'active' : ''}`}
+    data-category={cat}
+  >
+    {cat} <span class="filter-count">{countByCategory[cat]}</span>
+  </button>
+))}
+      </div>
+
+      <!-- COUNT -->
+      <div class="results-count" id="results-count">{posts.length} articles</div>
+
+      <!-- ARTICLES -->
+      <div class="articles-grid" id="articles-grid">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.id}`}
+            class="article-card"
+            data-category={post.data.category}
+          >
+            <div class="card-top">
+              <div class="article-category">{post.data.category}</div>
+              <div class="article-meta">
+                {post.data.readTime && <span>{post.data.readTime} read</span>}
+                {post.data.rctSources && <span>{post.data.rctSources} RCT sources</span>}
+              </div>
+            </div>
+            <div class="article-title">{post.data.title}</div>
+            <div class="article-excerpt">{post.data.excerpt || post.data.description}</div>
+            <div class="article-arrow">Read the full analysis →</div>
+          </a>
+        ))}
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <p>No articles in this category yet — check back soon.</p>
+        <a href="/start-here" class="cta">Start with the fundamentals →</a>
+      </div>
+
+      <div class="second-cta">
+        <span>Not sure where to start?</span>
+        <a href="/start-here" class="cta">Start with the fundamentals →</a>
+      </div>
+
+    </main>
+    <CookieBanner />
+    <Footer />
+  </body>
+</html>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+  const countEl = document.getElementById('results-count');
+  const emptyEl = document.getElementById('empty-state');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-category');
+
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter cards
+      let visible = 0;
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const show = cat === 'All' || cardCat === cat;
+        (card as HTMLElement).style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+
+      // Update count
+      const label = cat === 'All' ? `${visible} articles` : `${visible} article${visible !== 1 ? 's' : ''} in ${cat}`;
+      countEl.textContent = label;
+
+      // Empty state
+      emptyEl.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+</script>
+
+<style>
+    .filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.08);
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  margin-left: 4px;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.2);
+}
+
+  main { max-width: 900px; margin: 0 auto; padding: 0 28px 80px; }
+
+  .page-header {
+    padding: 56px 0 32px;
+    max-width: 640px;
+  }
+
+  .page-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+
+  .page-header p {
+    font-size: 15px;
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  /* FILTERS */
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 0.5px solid var(--color-border);
+    background: transparent;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-green);
+    color: var(--color-green);
+  }
+
+  .filter-btn.active {
+    background: var(--color-green);
+    color: #EAF3DE;
+    border-color: var(--color-green);
+  }
+
+  /* COUNT */
+  .results-count {
+    font-size: 11px;
+    color: var(--color-hint);
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ARTICLES */
+  .articles-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
+  .article-card { display: flex; flex-direction: column; gap: 8px; padding: 24px 20px; border-bottom: 0.5px solid var(--color-border); text-decoration: none; border-radius: 8px; transition: background 0.15s; }
+  .article-card:first-child { border-top: 0.5px solid var(--color-border); }
+  .article-card:hover { background: var(--color-surface); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .article-category { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-green); }
+  .article-meta { font-size: 11px; color: var(--color-hint); display: flex; gap: 10px; }
+  .article-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--color-text); line-height: 1.4; }
+  .article-excerpt { font-size: 13px; color: var(--color-muted); line-height: 1.65; max-width: 640px; }
+  .article-arrow { font-size: 12px; color: var(--color-green); font-weight: 500; margin-top: 4px; }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 64px 0;
+    color: var(--color-muted);
+    font-size: 15px;
+  }
+  .empty-state p { margin-bottom: 20px; }
+
+  /* SECOND CTA */
+  .second-cta { display: flex; align-items: center; justify-content: space-between; background: var(--color-surface); border-radius: 12px; padding: 20px 24px; margin-top: 16px; flex-wrap: wrap; gap: 16px; }
+  .second-cta span { font-size: 15px; color: var(--color-muted); font-weight: 500; }
+  .cta { display: inline-flex; align-items: center; background: var(--color-green); color: #EAF3DE; font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 8px; text-decoration: none; }
+
+  @media(max-width: 640px) {
+    .card-top { flex-direction: column; align-items: flex-start; }
+    .second-cta { flex-direction: column; }
+    .filters { gap: 6px; }
+  }
+</style>
