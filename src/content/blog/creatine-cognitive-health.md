@@ -29,11 +29,11 @@ If you're [sleep-deprived](/blog/why-wake-up-tired-after-8-hours), cognitively s
 
 **Quick Answer**
 
-Creatine monohydrate at **3–5 g/day (daily, no cycling)** shows consistent benefits for memory and processing speed, particularly in people under cognitive stress (sleep deprivation, aging, vegetarians/vegans). Effects in healthy, well-rested young adults are modest. The strongest signal is in high-demand conditions where brain ATP is depleted.
+Creatine monohydrate at **3–5 g/day (daily, no cycling)** — one of the most studied supplements in human history — shows consistent benefits for memory and processing speed, particularly in people under cognitive stress (sleep deprivation, aging, vegetarians/vegans). Effects in healthy, well-rested young adults are modest. The strongest signal is in high-demand conditions where brain ATP is depleted.
 
 If you're starting today, 3–5 g of creatine monohydrate daily is the simplest and most evidence-backed entry point.
 
-<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
+<a href="https://amzn.to/4bVHxzP" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
 
 <hr style="margin: 24px 0; border: none; height: 1px; background: #D3D1C7;">
 
@@ -98,9 +98,9 @@ For a full breakdown of how to optimize sleep quality at the root level, read: [
 
 **Form:** Creatine monohydrate is the most studied, cheapest, and best-supported form. Creatine HCl, buffered creatine, and other forms offer no meaningful advantage over monohydrate for cognitive purposes and cost significantly more. Stick with monohydrate.
 
-If you're going to use creatine, the form matters less than purity and testing. Third-party tested, no contaminants, and used in clinical settings.
+If you're going to use creatine, purity matters more than form. Third-party tested, no contaminants, and used in clinical settings.
 
-<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
+<a href="https://amzn.to/4bVHxzP" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
 
 ## Who Benefits Most
 
@@ -136,7 +136,7 @@ For students: creatine + magnesium glycinate (for sleep quality) addresses the t
 
 Third-party tested, no contaminants, and used in clinical settings.
 
-<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
+<a href="https://amzn.to/4bVHxzP" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Creatine (NSF Certified) →</a>
 
 ## Bottom Line
 
