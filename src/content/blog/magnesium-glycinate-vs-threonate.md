@@ -73,12 +73,12 @@ If your baseline magnesium status is adequate and your goal is specifically to s
 **For sleep and deficiency correction (best starting point):**
 Magnesium glycinate — high absorption, minimal GI side effects, glycine co-factor for sleep.
 
-<a href="https://www.thorne.com/products/dp/magnesium-bisglycinate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 **For cognitive longevity and brain support:**
 Magnesium L-Threonate (Magtein® form) — the only form with documented BBB penetration.
 
-<a href="https://www.lifeextension.com/vitamins-supplements/item01603/neuro-mag-magnesium-l-threonate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Life Extension Neuro-Mag (Magtein®) →</a>
+<a href="https://amzn.to/4lJThsD" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;font-size:14px;">View Life Extension Neuro-Mag (Magtein®) →</a>
 
 <div style="background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;font-size:13px;color:#5F5E5A;">
 <strong style="color:#854F0B;display:block;margin-bottom:6px;">Affiliate disclosure</strong>

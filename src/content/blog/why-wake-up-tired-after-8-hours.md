@@ -107,7 +107,7 @@ If you don't measure it, you're guessing.
 
 This is the fastest way to find out:
 
-<a href="https://www.amazon.com/s?k=bedside+thermometer+humidity+sensor" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
+<a href="https://amzn.to/40O7lri" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
 
 → Full breakdown: [Ideal Sleep Temperature: What the Research Actually Says](/blog/ideal-sleep-temperature)
 
@@ -133,7 +133,7 @@ Magnesium deficiency is estimated at 50%+ of Western adults — and one of its p
 Magnesium glycinate taken 30–60 minutes before bed addresses two of the six causes simultaneously: nervous system downregulation and core temperature drop. It's the highest-ROI single supplement intervention for sleep quality.
 </div>
 
-<a href="https://www.thorne.com/products/dp/magnesium-bisglycinate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 → Deep dive: [Magnesium Glycinate vs Threonate: Which Is Better for Sleep?](/blog/magnesium-glycinate-vs-threonate)
 

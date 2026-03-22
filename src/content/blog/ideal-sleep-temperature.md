@@ -121,7 +121,7 @@ Most people underestimate how warm their room gets overnight.
 
 This is the fastest way to find out.
 
-<a href="https://www.amazon.com/s?k=bedside+thermometer+humidity+sensor" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
+<a href="https://amzn.to/40O7lri" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">See current price on Amazon →</a>
 
 ### Step 2 — Control by budget
 

@@ -101,7 +101,7 @@ If I were to add one thing next, it would be a simple bedside thermometer with a
 
 *Budget alternative — highest ROI for most people:*
 
-<a href="https://www.amazon.com/s?k=bedside+thermometer+humidity+sensor" target="_blank" rel="noopener sponsored nofollow" style="display:inline-block;background:#1a1a18;color:#EAF3DE;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:10px;font-size:14px;">See thermometer options on Amazon →</a>
+<a href="https://amzn.to/40O7lri" target="_blank" rel="noopener sponsored nofollow" style="display:inline-block;background:#1a1a18;color:#EAF3DE;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:10px;font-size:14px;">See thermometer options on Amazon →</a>
 
 For the full picture on how light and circadian rhythm interact with your sleep temperature: *Blue Light and Melatonin: The Complete Guide — coming soon.*
 

@@ -33,7 +33,7 @@ The evidence-supported dose for sleep and relaxation is **200–400 mg of elemen
 
 A high-quality, fully reacted form (no oxide buffering) matters here.
 
-<a href="https://www.amazon.com/dp/B01F5HKQQU?tag=longevitystack-20" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 <hr style="margin: 24px 0; border: none; height: 1px; background: #D3D1C7;">
 
@@ -87,7 +87,7 @@ The RDA for elemental magnesium is 320 mg for women and 420 mg for men — from 
 **Upper safe limit**
 The tolerable upper intake level for supplemental magnesium is **350 mg of elemental magnesium per day** for healthy adults, per the National Academy of Medicine. Exceeding this without medical supervision increases the risk of adverse effects. People with kidney disease should not supplement magnesium without direct medical oversight — the kidneys are responsible for clearing excess magnesium, and impaired clearance can lead to hypermagnesemia.
 
-<a href="https://www.amazon.com/dp/B01F5HKQQU?tag=longevitystack-20" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:8px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 ## Timing: When to Take It
 
@@ -153,7 +153,7 @@ If dosing was the issue, fixing this alone can completely change your results.
 
 For a deeper breakdown of glycinate vs. threonate and which form fits your goal, read: [Magnesium Glycinate vs Threonate: Which Is Better?](/blog/magnesium-glycinate-vs-threonate)
 
-<a href="https://www.amazon.com/dp/B01F5HKQQU?tag=longevitystack-20" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:16px;margin-bottom:40px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 
 

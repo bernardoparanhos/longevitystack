@@ -109,7 +109,7 @@ Not all magnesium supplements are created equal. Heavy metal contamination and l
 - **Thorne Magnesium Bisglycinate** — NSF certified, no fillers, 200mg elemental per serving. The form and brand I currently use. *(affiliate link)*
 - **Pure Encapsulations Magnesium Glycinate** — clinical-grade, widely used in research protocols.
 
-<a href="https://www.thorne.com/products/dp/magnesium-bisglycinate" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:10px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
+<a href="https://amzn.to/4bFtIEp" target="_blank" rel="noopener sponsored" style="display:inline-block;background:#3B6D11;color:white;padding:12px 18px;border-radius:6px;font-weight:600;text-decoration:none;margin-top:10px;">View Thorne Magnesium Bisglycinate (NSF Certified) →</a>
 
 **For threonate:**
 - **Magtein by Life Extension** — the original patented form used in clinical trials.
